@@ -22,6 +22,22 @@ class Product(models.Model):
     def __str__(self):
         return self.product_name
 
+# variation_category_choice= (
+#     ('color','color'),
+#     ('size','size')   
+# )
+
+# class variation(models.Model):
+#     product= models.ForeignKey(Product, on_delete= models.CASCADE)
+#     variation_category= models.CharField(MAX_LENGTH=100,CHOICES=variation_category_choice)
+#     variation_value= models.CharField(max_length=100)
+#     is_active      = models.BooleanField(default=True)
+#     created_date= models.DateField(auto_now=True)
+
+#     def __str__(self):
+#         return self.product
+    
+
     # def averageReview(self):
     #     reviews = ReviewRating.objects.filter(product=self, status=True).aggregate(average=Avg('rating'))
     #     avg = 0
