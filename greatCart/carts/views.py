@@ -14,20 +14,11 @@ def _cart_id(request):  #priate function
     return cart
 
 def add_cart(request, product_id):
+    if request.method == 'POST':
+        color = request.POST['color']
+        size = request.POST['size']
+        print(color,size)
 
-    color= request.GET['color']
-    size= request.GET['size']
-    return HttpResponse(color+' '+size)
-    exit()
-    
-# <<<<<<< HEAD
-
-#     color= request.GET['color']
-#     size= request.GET['size']
-#     return HttpResponse(color+' '+size)
-#     exit()
-# =======
-# >>>>>>> 1d48a8a1b969ce0aaecad5cb9aa55a4e8ed16f66
     
     product = Product.objects.get(id=product_id)    #get the product
     try:
